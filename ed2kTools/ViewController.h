@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController<NSTableViewDelegate,NSTableViewDataSource>
 
+@property (weak) IBOutlet NSTextField *getURLField;
 
 @end
 
