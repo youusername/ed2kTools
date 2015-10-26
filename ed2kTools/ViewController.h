@@ -7,10 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
 @interface ViewController : NSViewController<NSTableViewDelegate,NSTableViewDataSource>
-
 @property (weak) IBOutlet NSTextField *getURLField;
+@property (weak) IBOutlet NSSearchField *getSearchField;
 
 @end
 

@@ -18,9 +18,15 @@
 		045C52481BCD04E100DBC0D2 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C52451BCD04E100DBC0D2 /* XPathQuery.m */; };
 		045C524A1BCD060A00DBC0D2 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 045C52491BCD060A00DBC0D2 /* libxml2.dylib */; };
 		045C524C1BCD063900DBC0D2 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 045C524B1BCD063900DBC0D2 /* libxml2.2.dylib */; };
+		046509D11BD0BE5D006BE2DB /* ed2kClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 046509D01BD0BE5D006BE2DB /* ed2kClass.m */; settings = {ASSET_TAGS = (); }; };
+		046509D31BD0D00B006BE2DB /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 046509D21BD0D00B006BE2DB /* weibo.png */; settings = {ASSET_TAGS = (); }; };
 		04D563131BCD130700CFD69D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D563121BCD130700CFD69D /* Foundation.framework */; };
 		04D563151BCD130E00CFD69D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D563141BCD130E00CFD69D /* AppKit.framework */; };
 		04D563171BCD131500CFD69D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D563161BCD131500CFD69D /* CoreData.framework */; };
+		04F793651BD8E4C400A68CFA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F793641BD8E4C400A68CFA /* Cocoa.framework */; };
+		04F793671BD8E4CD00A68CFA /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F793661BD8E4CD00A68CFA /* CoreServices.framework */; };
+		04F793691BD8E4D700A68CFA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F793681BD8E4D700A68CFA /* Security.framework */; };
+		04F7936B1BD8E4DF00A68CFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7936A1BD8E4DF00A68CFA /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +60,16 @@
 		045C52451BCD04E100DBC0D2 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		045C52491BCD060A00DBC0D2 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		045C524B1BCD063900DBC0D2 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		046509CF1BD0BE5D006BE2DB /* ed2kClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ed2kClass.h; sourceTree = "<group>"; };
+		046509D01BD0BE5D006BE2DB /* ed2kClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ed2kClass.m; sourceTree = "<group>"; };
+		046509D21BD0D00B006BE2DB /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo.png; sourceTree = "<group>"; };
 		04D563121BCD130700CFD69D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		04D563141BCD130E00CFD69D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		04D563161BCD131500CFD69D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04F793641BD8E4C400A68CFA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		04F793661BD8E4CD00A68CFA /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		04F793681BD8E4D700A68CFA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		04F7936A1BD8E4DF00A68CFA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F7936B1BD8E4DF00A68CFA /* SystemConfiguration.framework in Frameworks */,
+				04F793691BD8E4D700A68CFA /* Security.framework in Frameworks */,
+				04F793671BD8E4CD00A68CFA /* CoreServices.framework in Frameworks */,
+				04F793651BD8E4C400A68CFA /* Cocoa.framework in Frameworks */,
 				04D563171BCD131500CFD69D /* CoreData.framework in Frameworks */,
 				04D563151BCD130E00CFD69D /* AppKit.framework in Frameworks */,
 				04D563131BCD130700CFD69D /* Foundation.framework in Frameworks */,
@@ -106,8 +123,11 @@
 				045C523F1BCD04E100DBC0D2 /* Classes */,
 				045C521E1BCD040C00DBC0D2 /* AppDelegate.h */,
 				045C521F1BCD040C00DBC0D2 /* AppDelegate.m */,
+				046509D21BD0D00B006BE2DB /* weibo.png */,
 				045C52231BCD040C00DBC0D2 /* ViewController.h */,
 				045C52241BCD040C00DBC0D2 /* ViewController.m */,
+				046509CF1BD0BE5D006BE2DB /* ed2kClass.h */,
+				046509D01BD0BE5D006BE2DB /* ed2kClass.m */,
 				045C52261BCD040C00DBC0D2 /* Images.xcassets */,
 				045C52281BCD040C00DBC0D2 /* Main.storyboard */,
 				045C521C1BCD040C00DBC0D2 /* Supporting Files */,
@@ -127,6 +147,10 @@
 		045C52321BCD040C00DBC0D2 /* ed2kToolsTests */ = {
 			isa = PBXGroup;
 			children = (
+				04F7936A1BD8E4DF00A68CFA /* SystemConfiguration.framework */,
+				04F793681BD8E4D700A68CFA /* Security.framework */,
+				04F793661BD8E4CD00A68CFA /* CoreServices.framework */,
+				04F793641BD8E4C400A68CFA /* Cocoa.framework */,
 				04D563161BCD131500CFD69D /* CoreData.framework */,
 				04D563141BCD130E00CFD69D /* AppKit.framework */,
 				04D563121BCD130700CFD69D /* Foundation.framework */,
@@ -203,7 +227,7 @@
 		045C52111BCD040C00DBC0D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Mac;
 				TargetAttributes = {
 					045C52181BCD040C00DBC0D2 = {
@@ -240,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				045C52271BCD040C00DBC0D2 /* Images.xcassets in Resources */,
+				046509D31BD0D00B006BE2DB /* weibo.png in Resources */,
 				045C522A1BCD040C00DBC0D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +289,7 @@
 				045C52461BCD04E100DBC0D2 /* TFHpple.m in Sources */,
 				045C52481BCD04E100DBC0D2 /* XPathQuery.m in Sources */,
 				045C52471BCD04E100DBC0D2 /* TFHppleElement.m in Sources */,
+				046509D11BD0BE5D006BE2DB /* ed2kClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +344,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -338,7 +365,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"${SDKROOT}/usr/include/libxml2",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -380,7 +407,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"${SDKROOT}/usr/include/libxml2",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -393,7 +420,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ed2kTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "JingZhang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -405,7 +433,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ed2kTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "JingZhang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -425,6 +454,7 @@
 				);
 				INFOPLIST_FILE = ed2kToolsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JingZhang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ed2kTools.app/Contents/MacOS/ed2kTools";
 			};
@@ -441,6 +471,7 @@
 				);
 				INFOPLIST_FILE = ed2kToolsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JingZhang.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ed2kTools.app/Contents/MacOS/ed2kTools";
 			};
