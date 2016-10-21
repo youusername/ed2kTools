@@ -38,6 +38,7 @@
 
 {
 //    单击选择事件
+//    http://www.ed2000.com/ShowFile.asp?vid=2894968
     NSInteger rowNumber = [EtableView clickedRow];
     if (rowNumber==-1) {
         for (ed2kClass*ed2k in ed2kArray) {
@@ -46,10 +47,12 @@
     }else{
         ed2kClass*ed2k=ed2kArray[rowNumber];
         ed2k.box=ed2k.box==1?0:1;
+        
+        NSLog(@"Selector Clicked.%ld / %@",rowNumber,ed2k.ed2k);
     }
     [EtableView reloadData];
     
-    NSLog(@"Selector Clicked.%ld ",rowNumber);
+    
     
 }
 - (void)doubleClick:(id)sender
@@ -78,9 +81,30 @@
     }
     [self setPasteboard:str];
 }
+#pragma mark 跳转到weibo
+- (void)openURL:(NSString *)url inBackground:(BOOL)background
+{
+    if (background)
+    {
+        NSArray* urls = [NSArray arrayWithObject:[NSURL URLWithString:url]];
+        [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+    }
+    else
+    {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+    }
+}
 - (IBAction)pushWibo:(id)sender {
-    
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://weibo.com/u/2689574923"]];
+//    if (/* DISABLES CODE */ (YES))
+//    {
+        NSArray* urls = [NSArray arrayWithObject:[NSURL URLWithString:@"http://weibo.com/u/2689574923"]];
+        [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+//    }
+//    else
+//    {
+//        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://weibo.com/u/2689574923"]];
+//    }
+//    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://weibo.com/u/2689574923"]];
 }
 - (IBAction)copyAllEd2k:(id)sender {
     NSString*str=[[NSString alloc]init];
@@ -210,6 +234,8 @@
             isAdd = NO;
         }
     }
+    
+    
     if (ListArray.count<=0) {
 //        查找非标签内的ed2k
         [ListArray addObjectsFromArray:[self getNotLabeWeb:[xpathparser searchWithXPathQuery:@"/*"]]];
@@ -219,27 +245,34 @@
 }
 
 -(NSMutableArray*)getNotLabeWeb:(NSArray*)array{
-    NSMutableArray*arr=[[NSMutableArray alloc]init];
+//    整理去重
+    NSMutableSet*setEd2k=[[NSMutableSet alloc]init];
     for (TFHppleElement*tf in array) {
         NSArray*ed2kA=[tf.raw componentsSeparatedByString:@"|/"];
         for (NSString*isEd2k in ed2kA) {
-            if ([self isEd2k:[NSString stringWithFormat:@"%@|/",isEd2k]]) {
+            if ([self isEd2k:[NSString stringWithFormat:@"%@|/",isEd2k]])
+            {
                 NSString*clearEd2k = [self clearEd2kSrt:[NSString stringWithFormat:@"%@|/",isEd2k]];
-                ed2kClass*e=[[ed2kClass alloc]init];
-                e.ed2k=[self clearEd2kSrt:clearEd2k];
-                e.Name=[self searchEd2kName:[self clearEd2kSrt:clearEd2k]];
-                [arr addObject:e];
-                
+                [setEd2k addObject:[self clearEd2kSrt:clearEd2k]];
             }
         }
     }
-    
-    
+    NSArray *sortDesc = @[[[NSSortDescriptor alloc] initWithKey:nil ascending:YES]];
+    NSArray *sortSetArray = [setEd2k sortedArrayUsingDescriptors:sortDesc];
+//    生成对象加入数组
+    NSMutableArray*arr=[[NSMutableArray alloc]init];
+    for (NSString*Ed2k in sortSetArray) {
+        ed2kClass*e=[[ed2kClass alloc]init];
+        e.ed2k=Ed2k;
+        e.Name=[self searchEd2kName:Ed2k];
+        [arr addObject:e];
+    }
+
     return arr;
 }
 -(NSString*)clearEd2kSrt:(NSString*)ed2kstr{
 //    清理ed2k前后的多余字符
-    NSRange range = [ed2kstr rangeOfString:@"ed2k"];//匹配得到的下标
+    NSRange range = [ed2kstr rangeOfString:@"ed2k://"];//匹配得到的下标
     NSRange range2 = [ed2kstr rangeOfString:@"|/"];//匹配得到的下标
 //    NSString*clear1=[]
     return [[ed2kstr substringFromIndex:range.location] substringToIndex:range2.length+range2.location-range.location];

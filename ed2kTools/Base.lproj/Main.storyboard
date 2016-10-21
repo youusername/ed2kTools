@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,8 +673,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="328"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HTU-lr-TiL">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HTU-lr-TiL">
                                 <rect key="frame" x="295" y="12" width="96" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="6IW-BU-IJq"/>
+                                    <constraint firstAttribute="width" constant="92" id="Lkj-46-Ifi"/>
+                                </constraints>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="版本号:1016" id="hP6-gx-BWo">
                                     <font key="font" metaFont="system"/>
@@ -682,9 +686,9 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x4-si-nxC">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x4-si-nxC">
                                 <rect key="frame" x="11" y="12" width="272" height="302"/>
-                                <clipView key="contentView" ambiguous="YES" id="RYz-6X-Jhl">
+                                <clipView key="contentView" id="RYz-6X-Jhl">
                                     <rect key="frame" x="1" y="0.0" width="270" height="301"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -711,7 +715,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <button id="Rdg-kK-0BD">
-                                                            <rect key="frame" x="1" y="1" width="34" height="18"/>
+                                                            <rect key="frame" x="1" y="1" width="35" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <animations/>
                                                             <buttonCell key="cell" type="check" title=" " bezelStyle="regularSquare" imagePosition="only" state="on" inset="2" id="sYQ-oI-iO8">
@@ -749,7 +753,7 @@
                                                     </prototypeCellViews>
                                                     <accessibility identifier="number"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="ed2k" width="201.609375" minWidth="40" maxWidth="1000" id="3U8-mM-OVL">
+                                                <tableColumn identifier="ed2k" width="201.5" minWidth="40" maxWidth="1000" id="3U8-mM-OVL">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="ed2k">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -803,8 +807,12 @@
                                     <animations/>
                                 </tableHeaderView>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FFJ-wN-k3K">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FFJ-wN-k3K">
                                 <rect key="frame" x="422" y="8" width="49" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="8bT-9r-CfB"/>
+                                    <constraint firstAttribute="width" constant="45" id="tme-R9-xhX"/>
+                                </constraints>
                                 <animations/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="weibo" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="baI-jc-gBp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -814,17 +822,12 @@
                                     <action selector="pushWibo:" target="XfG-lQ-9wD" id="HkU-BU-YKw"/>
                                 </connections>
                             </button>
-                            <searchField hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HXE-St-tAD">
-                                <rect key="frame" x="291" y="288" width="178" height="22"/>
-                                <animations/>
-                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="通过名称搜索" usesSingleLineMode="YES" bezelStyle="round" id="lwZ-SY-67b">
-                                    <font key="font" metaFont="cellTitle"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </searchFieldCell>
-                            </searchField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubj-aI-ZuH">
-                                <rect key="frame" x="291" y="170" width="178" height="144"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Ubj-aI-ZuH">
+                                <rect key="frame" x="291" y="170" width="178" height="119"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="119" id="7Mj-Hs-nDG"/>
+                                    <constraint firstAttribute="width" constant="178" id="N2B-51-mse"/>
+                                </constraints>
                                 <animations/>
                                 <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="               通过目标网址" drawsBackground="YES" id="sNk-1P-msh">
                                     <font key="font" metaFont="smallSystem"/>
@@ -832,8 +835,12 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9g-Cx-VAA">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F9g-Cx-VAA">
                                 <rect key="frame" x="291" y="120" width="178" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="06l-k9-UUK"/>
+                                    <constraint firstAttribute="width" constant="178" id="Cug-L4-Yua"/>
+                                </constraints>
                                 <animations/>
                                 <buttonCell key="cell" type="squareTextured" title="Go" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jaa-me-j0r">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -843,8 +850,12 @@
                                     <action selector="GoAction:" target="XfG-lQ-9wD" id="IIG-ZF-dJ3"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nia-Bo-bkq">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nia-Bo-bkq">
                                 <rect key="frame" x="383" y="67" width="86" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="Ksm-VA-HDL"/>
+                                    <constraint firstAttribute="height" constant="31" id="Obk-hI-S4J"/>
+                                </constraints>
                                 <animations/>
                                 <buttonCell key="cell" type="squareTextured" title="复制全部链接" bezelStyle="texturedSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Bn9-jv-7M6">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -854,8 +865,12 @@
                                     <action selector="copyAllEd2k:" target="XfG-lQ-9wD" id="Wzf-zp-uef"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ft-Zb-QOl">
+                            <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Ft-Zb-QOl">
                                 <rect key="frame" x="291" y="67" width="90" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="LZd-8m-4zk"/>
+                                    <constraint firstAttribute="width" constant="90" id="fmn-qV-VPa"/>
+                                </constraints>
                                 <animations/>
                                 <buttonCell key="cell" type="squareTextured" title="复制勾选链接" bezelStyle="texturedSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rrf-Bb-7oJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -865,7 +880,43 @@
                                     <action selector="copySelectorEd2k:" target="XfG-lQ-9wD" id="Udt-1t-yvj"/>
                                 </connections>
                             </button>
+                            <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HXE-St-tAD">
+                                <rect key="frame" x="291" y="292" width="178" height="22"/>
+                                <animations/>
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="通过名称搜索" usesSingleLineMode="YES" bezelStyle="round" id="lwZ-SY-67b">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </searchFieldCell>
+                            </searchField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Nia-Bo-bkq" firstAttribute="leading" secondItem="2Ft-Zb-QOl" secondAttribute="trailing" constant="2" id="0rP-hU-9f8"/>
+                            <constraint firstAttribute="trailing" secondItem="FFJ-wN-k3K" secondAttribute="trailing" constant="11" id="Eq5-uq-TUu"/>
+                            <constraint firstAttribute="trailing" secondItem="F9g-Cx-VAA" secondAttribute="trailing" constant="11" id="FMq-42-Yzk"/>
+                            <constraint firstAttribute="bottom" secondItem="HTU-lr-TiL" secondAttribute="bottom" constant="12" id="JoN-Mf-wIC"/>
+                            <constraint firstAttribute="trailing" secondItem="7x4-si-nxC" secondAttribute="trailing" constant="197" id="K01-BM-UOG"/>
+                            <constraint firstItem="F9g-Cx-VAA" firstAttribute="top" secondItem="Ubj-aI-ZuH" secondAttribute="bottom" constant="20" id="OEa-hY-L17"/>
+                            <constraint firstItem="Ubj-aI-ZuH" firstAttribute="leading" secondItem="7x4-si-nxC" secondAttribute="trailing" constant="8" id="PDW-X9-7Hh"/>
+                            <constraint firstAttribute="trailing" secondItem="HXE-St-tAD" secondAttribute="trailing" constant="11" id="Rku-Bo-oNq"/>
+                            <constraint firstItem="HTU-lr-TiL" firstAttribute="top" secondItem="2Ft-Zb-QOl" secondAttribute="bottom" constant="34" id="TK9-tJ-ITH"/>
+                            <constraint firstItem="2Ft-Zb-QOl" firstAttribute="top" secondItem="F9g-Cx-VAA" secondAttribute="bottom" constant="22" id="TsJ-mF-hRG"/>
+                            <constraint firstAttribute="bottom" secondItem="FFJ-wN-k3K" secondAttribute="bottom" constant="11" id="U3h-Am-RtA"/>
+                            <constraint firstItem="7x4-si-nxC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="WlK-rW-jqi"/>
+                            <constraint firstAttribute="bottom" secondItem="7x4-si-nxC" secondAttribute="bottom" constant="12" id="X1t-OI-gwj"/>
+                            <constraint firstItem="Nia-Bo-bkq" firstAttribute="leading" secondItem="2Ft-Zb-QOl" secondAttribute="trailing" constant="2" id="acP-Rf-qbI"/>
+                            <constraint firstItem="F9g-Cx-VAA" firstAttribute="top" secondItem="Ubj-aI-ZuH" secondAttribute="bottom" constant="20" id="bgE-wf-Rqr"/>
+                            <constraint firstItem="Ubj-aI-ZuH" firstAttribute="top" secondItem="HXE-St-tAD" secondAttribute="bottom" constant="3" id="bi4-Db-5yz"/>
+                            <constraint firstItem="HXE-St-tAD" firstAttribute="leading" secondItem="7x4-si-nxC" secondAttribute="trailing" constant="8" id="del-c5-K8W"/>
+                            <constraint firstAttribute="trailing" secondItem="HTU-lr-TiL" secondAttribute="trailing" constant="91" id="dwz-wg-yxE"/>
+                            <constraint firstItem="HXE-St-tAD" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="eAJ-T9-7bf"/>
+                            <constraint firstAttribute="trailing" secondItem="Nia-Bo-bkq" secondAttribute="trailing" constant="11" id="gv9-B5-yza"/>
+                            <constraint firstAttribute="trailing" secondItem="Ubj-aI-ZuH" secondAttribute="trailing" constant="11" id="lfQ-jH-GwR"/>
+                            <constraint firstItem="7x4-si-nxC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="11" id="ong-vb-hU8"/>
+                            <constraint firstItem="FFJ-wN-k3K" firstAttribute="top" secondItem="Nia-Bo-bkq" secondAttribute="bottom" constant="22" id="p9a-yg-afB"/>
+                            <constraint firstItem="F9g-Cx-VAA" firstAttribute="leading" secondItem="7x4-si-nxC" secondAttribute="trailing" constant="8" id="wdF-JY-KrN"/>
+                            <constraint firstItem="2Ft-Zb-QOl" firstAttribute="leading" secondItem="7x4-si-nxC" secondAttribute="trailing" constant="8" id="xzm-47-7hV"/>
+                        </constraints>
                         <animations/>
                     </view>
                     <connections>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043E48031BF09B4500D82DBF /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 043E48021BF09B4500D82DBF /* libxml2.tbd */; };
+		043E48051BF09B5200D82DBF /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 043E48041BF09B5100D82DBF /* libxml2.2.tbd */; };
 		045C52201BCD040C00DBC0D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C521F1BCD040C00DBC0D2 /* AppDelegate.m */; };
 		045C52221BCD040C00DBC0D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C52211BCD040C00DBC0D2 /* main.m */; };
 		045C52251BCD040C00DBC0D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C52241BCD040C00DBC0D2 /* ViewController.m */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043E48021BF09B4500D82DBF /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		043E48041BF09B5100D82DBF /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		045C52191BCD040C00DBC0D2 /* ed2kTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ed2kTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045C521D1BCD040C00DBC0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045C521E1BCD040C00DBC0D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043E48051BF09B5200D82DBF /* libxml2.2.tbd in Frameworks */,
+				043E48031BF09B4500D82DBF /* libxml2.tbd in Frameworks */,
 				04F7936B1BD8E4DF00A68CFA /* SystemConfiguration.framework in Frameworks */,
 				04F793691BD8E4D700A68CFA /* Security.framework in Frameworks */,
 				04F793671BD8E4CD00A68CFA /* CoreServices.framework in Frameworks */,
@@ -156,6 +162,8 @@
 				04D563121BCD130700CFD69D /* Foundation.framework */,
 				045C524B1BCD063900DBC0D2 /* libxml2.2.dylib */,
 				045C52491BCD060A00DBC0D2 /* libxml2.dylib */,
+				043E48041BF09B5100D82DBF /* libxml2.2.tbd */,
+				043E48021BF09B4500D82DBF /* libxml2.tbd */,
 				045C52351BCD040C00DBC0D2 /* ed2kToolsTests.m */,
 				045C52331BCD040C00DBC0D2 /* Supporting Files */,
 			);
