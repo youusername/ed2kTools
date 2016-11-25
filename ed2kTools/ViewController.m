@@ -95,16 +95,10 @@
     }
 }
 - (IBAction)pushWibo:(id)sender {
-//    if (/* DISABLES CODE */ (YES))
-//    {
+
         NSArray* urls = [NSArray arrayWithObject:[NSURL URLWithString:@"http://weibo.com/u/2689574923"]];
         [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-//    }
-//    else
-//    {
-//        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://weibo.com/u/2689574923"]];
-//    }
-//    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://weibo.com/u/2689574923"]];
+
 }
 - (IBAction)copyAllEd2k:(id)sender {
     NSString*str=[[NSString alloc]init];
@@ -162,8 +156,9 @@
     
     if (self.getURLField.stringValue.length>5) {
         [ed2kArray removeAllObjects];
-        [ed2kArray addObjectsFromArray:[self getEd2kSetUrl:[self FiltrationURL:self.getURLField.stringValue]]];
-        [EtableView reloadData];
+//        [ed2kArray addObjectsFromArray:[self getEd2kSetUrl:[self FiltrationURL:self.getURLField.stringValue]]];
+        [self getEd2kSetUrl:self.getURLField.stringValue];
+        
     }else if (self.getSearchField.stringValue.length>5){
 //        [ed2kArray removeAllObjects];
 //        [EtableView reloadData];
@@ -180,68 +175,78 @@
     }
     
 }
--(NSMutableArray*)getEd2kSetUrl:(NSString*)url{
-    NSMutableArray*ListArray=[[NSMutableArray alloc]init];
-    NSData*htmlData=[[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
-    if (htmlData.length<100) {
-        
-        return [[NSMutableArray alloc]init];
-    }
-    //    TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-    [xpathparser setValue:htmlData forKey:@"data"];
-    NSString*ed2k;
-    NSArray*liS=[xpathparser searchWithXPathQuery:@"//a[@href]"];
-    NSString* strClear;
-//    NSString *user;
-    NSRange range;
-    BOOL isAdd = NO;
-    for (TFHppleElement*tf in liS) {
-        if (tf.raw.length>200) {
-            
-            if ([[tf.raw componentsSeparatedByString:@"ed2k://"] count]>=2) {
-//                查找ed2k链接
-//                user = @"ed2k://.*.\\|\\/";
-//                range = [tf.raw rangeOfString:user options:NSRegularExpressionSearch];
-//                strClear=[NSString stringWithFormat:@"%@",[tf.raw substringWithRange:range]];
-                strClear = [self TextrangeOfString:tf.raw setRegularExpressions:@"ed2k://.*.\\|\\/"];
-                NSArray*strClearArray=[strClear componentsSeparatedByString:@"|/"];
-                if (strClearArray.count<2) {
-                    ed2k=[tf.raw substringWithRange:range];
-                }else{
-                    ed2k=[NSString stringWithFormat:@"%@|/",strClearArray[0]];
+-(void)getEd2kSetUrl:(NSString*)url{
+    
+        NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+        NSURLSession * session = [NSURLSession sharedSession];
+        NSURLSessionDataTask * dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            dispatch_async(dispatch_queue_create("download html queue", nil), ^{
+                if (data.length<100) {
+                    
                 }
-                isAdd = YES;
+
+                [xpathparser setValue:data forKey:@"data"];
+                NSString*ed2k;
+                NSArray*liS=[xpathparser searchWithXPathQuery:@"//a[@href]"];
+                NSString* strClear;
+                NSRange range;
+                BOOL isAdd = NO;
+                for (TFHppleElement*tf in liS) {
+                    if (tf.raw.length>200) {
+                        
+                        if ([[tf.raw componentsSeparatedByString:@"ed2k://"] count]>=2) {
+                            //                查找ed2k链接
+                            //                user = @"ed2k://.*.\\|\\/";
+                            //                range = [tf.raw rangeOfString:user options:NSRegularExpressionSearch];
+                            //                strClear=[NSString stringWithFormat:@"%@",[tf.raw substringWithRange:range]];
+                            strClear = [self TextrangeOfString:tf.raw setRegularExpressions:@"ed2k://.*.\\|\\/"];
+                            NSArray*strClearArray=[strClear componentsSeparatedByString:@"|/"];
+                            if (strClearArray.count<2) {
+                                ed2k=[tf.raw substringWithRange:range];
+                            }else{
+                                ed2k=[NSString stringWithFormat:@"%@|/",strClearArray[0]];
+                            }
+                            isAdd = YES;
+                            
+                        }else if ([[tf.raw componentsSeparatedByString:@"magnet:?"] count]>=2){
+                            //                查找磁力链接
+                            //                user = @"magnet:?[^\"]+";
+                            //                range = [tf.raw rangeOfString:user options:NSRegularExpressionSearch];
+                            //                strClear = [NSString stringWithFormat:@"%@",[tf.raw substringWithRange:range]];
+                            //                ed2k = strClear;
+                            ed2k = [self TextrangeOfString:tf.raw setRegularExpressions:@"magnet:?[^\"]+"];
+                            isAdd = YES;
+                        }
+                        
+                        
+                        if (range.location != NSNotFound && isAdd) {
+                            //                排除空数据
+                            ed2kClass*e=[[ed2kClass alloc]init];
+                            e.ed2k=ed2k;
+                            e.Name=[self searchEd2kName:ed2k];
+                            
+                            [ed2kArray addObject:e];
+                        }
+                        isAdd = NO;
+                    }
+                }
                 
-            }else if ([[tf.raw componentsSeparatedByString:@"magnet:?"] count]>=2){
-//                查找磁力链接
-//                user = @"magnet:?[^\"]+";
-//                range = [tf.raw rangeOfString:user options:NSRegularExpressionSearch];
-//                strClear = [NSString stringWithFormat:@"%@",[tf.raw substringWithRange:range]];
-//                ed2k = strClear;
-                ed2k = [self TextrangeOfString:tf.raw setRegularExpressions:@"magnet:?[^\"]+"];
-                isAdd = YES;
-            }
-            
-            
-            if (range.location != NSNotFound && isAdd) {
-//                排除空数据
-                ed2kClass*e=[[ed2kClass alloc]init];
-                e.ed2k=ed2k;
-                e.Name=[self searchEd2kName:ed2k];
                 
-                [ListArray addObject:e];
-            }
-            isAdd = NO;
-        }
-    }
+                if (ed2kArray.count<=0) {
+                    //        查找非标签内的ed2k
+                    [ed2kArray addObjectsFromArray:[self getNotLabeWeb:[xpathparser searchWithXPathQuery:@"/*"]]];
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // 更新界面
+                    
+                    [EtableView reloadData];
+                });
+            });
+        }];
+        [dataTask resume];
+
     
-    
-    if (ListArray.count<=0) {
-//        查找非标签内的ed2k
-        [ListArray addObjectsFromArray:[self getNotLabeWeb:[xpathparser searchWithXPathQuery:@"/*"]]];
-    }
-    
-    return ListArray;
+//    return ListArray;
 }
 
 -(NSMutableArray*)getNotLabeWeb:(NSArray*)array{

@@ -20,8 +20,8 @@
 		045C52481BCD04E100DBC0D2 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C52451BCD04E100DBC0D2 /* XPathQuery.m */; };
 		045C524A1BCD060A00DBC0D2 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 045C52491BCD060A00DBC0D2 /* libxml2.dylib */; };
 		045C524C1BCD063900DBC0D2 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 045C524B1BCD063900DBC0D2 /* libxml2.2.dylib */; };
-		046509D11BD0BE5D006BE2DB /* ed2kClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 046509D01BD0BE5D006BE2DB /* ed2kClass.m */; settings = {ASSET_TAGS = (); }; };
-		046509D31BD0D00B006BE2DB /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 046509D21BD0D00B006BE2DB /* weibo.png */; settings = {ASSET_TAGS = (); }; };
+		046509D11BD0BE5D006BE2DB /* ed2kClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 046509D01BD0BE5D006BE2DB /* ed2kClass.m */; };
+		046509D31BD0D00B006BE2DB /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 046509D21BD0D00B006BE2DB /* weibo.png */; };
 		04D563131BCD130700CFD69D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D563121BCD130700CFD69D /* Foundation.framework */; };
 		04D563151BCD130E00CFD69D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D563141BCD130E00CFD69D /* AppKit.framework */; };
 		04D563171BCD131500CFD69D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D563161BCD131500CFD69D /* CoreData.framework */; };
@@ -29,6 +29,7 @@
 		04F793671BD8E4CD00A68CFA /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F793661BD8E4CD00A68CFA /* CoreServices.framework */; };
 		04F793691BD8E4D700A68CFA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F793681BD8E4D700A68CFA /* Security.framework */; };
 		04F7936B1BD8E4DF00A68CFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7936A1BD8E4DF00A68CFA /* SystemConfiguration.framework */; };
+		AA5792111DE808B600720919 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5792101DE808B600720919 /* WindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		04F793661BD8E4CD00A68CFA /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		04F793681BD8E4D700A68CFA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		04F7936A1BD8E4DF00A68CFA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AA57920F1DE808B600720919 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		AA5792101DE808B600720919 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				045C523F1BCD04E100DBC0D2 /* Classes */,
 				045C521E1BCD040C00DBC0D2 /* AppDelegate.h */,
 				045C521F1BCD040C00DBC0D2 /* AppDelegate.m */,
+				AA57920F1DE808B600720919 /* WindowController.h */,
+				AA5792101DE808B600720919 /* WindowController.m */,
 				046509D21BD0D00B006BE2DB /* weibo.png */,
 				045C52231BCD040C00DBC0D2 /* ViewController.h */,
 				045C52241BCD040C00DBC0D2 /* ViewController.m */,
@@ -292,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				045C52251BCD040C00DBC0D2 /* ViewController.m in Sources */,
+				AA5792111DE808B600720919 /* WindowController.m in Sources */,
 				045C52221BCD040C00DBC0D2 /* main.m in Sources */,
 				045C52201BCD040C00DBC0D2 /* AppDelegate.m in Sources */,
 				045C52461BCD04E100DBC0D2 /* TFHpple.m in Sources */,

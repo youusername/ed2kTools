@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
-
-@end
 
 @implementation AppDelegate
 
@@ -21,5 +18,17 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
-
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication
+                    hasVisibleWindows:(BOOL)flag{
+    //    if (!flag){//是否有可见窗口
+    //主窗口显示
+    //        [NSApp activateIgnoringOtherApps:NO];
+    [self.RootWindow makeKeyAndOrderFront:self];
+    
+    
+    //    }
+    
+    
+    return YES;
+}
 @end
