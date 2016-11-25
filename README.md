@@ -1,5 +1,5 @@
 # ed2kTools
-##直接抓取网页内的电驴链接和磁力链接
+##直接过滤网页内的电驴链接和磁力链接  MacOS  OS X cocoa 苹果软件
 
 
 ![1.gif](https://github.com/youusername/ed2kTools/blob/master/1.gif)
